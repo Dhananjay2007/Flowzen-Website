@@ -156,35 +156,51 @@ const Blogs = () => {
                         {filteredPosts.map((post) => (
                             <motion.div key={post.id} variants={itemVariants}>
                                 <TiltCard>
-                                    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 h-full flex flex-col group">
-                                        <div className="relative h-56 overflow-hidden">
+                                    <div className="bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] transition-[transform,shadow] duration-500 border border-gray-100 h-full flex flex-col group relative overflow-hidden">
+                                        <div className="relative h-60 overflow-hidden">
                                             <img
                                                 src={post.image}
                                                 alt={post.title}
-                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                                 loading="lazy"
                                                 decoding="async"
                                             />
-                                            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-primary">
+                                            {/* Gradient Overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-[10px] font-bold text-primary uppercase tracking-wider shadow-sm border border-white/50">
                                                 {post.category}
                                             </div>
                                         </div>
-                                        <div className="p-6 flex-grow flex flex-col">
-                                            <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
-                                                <span className="flex items-center gap-1"> {post.date}</span>
-                                                <span className="flex items-center gap-1"> {post.readTime}</span>
-                                            </div>
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                                                {post.title}
-                                            </h3>
-                                            <p className="text-gray-500 text-sm mb-6 line-clamp-3 leading-relaxed">
-                                                {post.excerpt}
-                                            </p>
-                                            <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-50">
-                                                <span className="text-xs font-semibold text-gray-900 flex items-center gap-2">
-                                                    {post.author}
-                                                </span>
-                                                <ReadMoreButton onClick={() => alert("Full blog post coming soon! We're putting the finishing touches on this article.")} />
+
+                                        <div className="flex-grow flex flex-col relative rounded-b-2xl overflow-hidden isolate-fix">
+                                            {/* Isolated Backdrop */}
+                                            <div className="absolute inset-0 bg-white transition-colors duration-500 group-hover:bg-gray-50/30 -z-10 rounded-b-2xl"></div>
+
+                                            <div className="p-8 relative h-full flex flex-col antialiased">
+                                                <div className="flex items-center gap-4 text-[11px] text-gray-400 mb-4 font-medium">
+                                                    <span className="flex items-center gap-1.5 uppercase tracking-tight italic"> {post.date}</span>
+                                                    <span className="w-1 h-1 rounded-full bg-gray-200"></span>
+                                                    <span className="flex items-center gap-1.5 uppercase tracking-tight italic"> {post.readTime}</span>
+                                                </div>
+                                                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                                                    {post.title}
+                                                </h3>
+                                                <p className="text-gray-500 text-sm mb-8 line-clamp-3 leading-relaxed opacity-90">
+                                                    {post.excerpt}
+                                                </p>
+
+                                                <div className="mt-auto flex items-center justify-between pt-6 border-t border-gray-100/60">
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-[10px] font-bold text-primary border border-primary/20">
+                                                            {post.author.charAt(0)}
+                                                        </div>
+                                                        <span className="text-xs font-bold text-gray-700">
+                                                            {post.author}
+                                                        </span>
+                                                    </div>
+                                                    <ReadMoreButton onClick={() => alert("Full blog post coming soon! We're putting the finishing touches on this article.")} />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

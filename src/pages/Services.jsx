@@ -150,16 +150,29 @@ const ServicesPage = () => {
                     className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                 >
                     {[
-                        { title: "Web Apps", desc: "Complex web applications built for scale and speed." },
-                        { title: "E-Commerce", desc: "Feature-rich online stores that drive sales." },
-                        { title: "UI/UX Design", desc: "User-centered design that delights your audience." },
-                        { title: "IoT Solutions", desc: "Innovative edge-to-cloud connectivity solutions." }
+                        { title: "Web Apps", desc: "Complex web applications built for scale and speed.", icon: "/assets/images/Icons/Web_apps.png" },
+                        { title: "IoT Solutions", desc: "Build smart, connected systems with edge computing and real-time data monitoring.", icon: "/assets/images/Icons/iot-solution.png" },
+                        { title: "UI/UX Design", desc: "User-centered design that delights your audience.", icon: "/assets/images/Icons/UI-UX-design.png" },
+                        { title: "Maintenance", desc: "Reliable support and updates to keep your site running smooth.", icon: "/assets/images/Icons/Website_Maintenace_Support.png" }
                     ].map((item, index) => (
                         <motion.div key={index} variants={itemVariants}>
                             <TiltCard>
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                                    <p className="text-gray-600">{item.desc}</p>
+                                <div className="group relative p-[1px] rounded-2xl h-full transition-[transform,shadow] duration-500 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)] overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+
+                                    <div className="relative h-full rounded-2xl overflow-hidden isolate-fix">
+                                        {/* Isolated Glass Backdrop */}
+                                        <div className="absolute inset-0 bg-white/80 backdrop-blur-md transition-colors duration-500 group-hover:bg-white -z-10 rounded-2xl"></div>
+
+                                        {/* Content Layer */}
+                                        <div className="relative p-8 h-full flex flex-col items-center text-center antialiased">
+                                            <div className="w-16 h-16 mb-6 flex items-center justify-center rounded-2xl bg-gray-50 group-hover:scale-110 transition-transform duration-500">
+                                                <img src={item.icon} alt={item.title} className="w-10 h-10 object-contain" />
+                                            </div>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </TiltCard>
                         </motion.div>

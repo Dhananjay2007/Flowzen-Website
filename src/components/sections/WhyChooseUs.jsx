@@ -6,17 +6,17 @@ import TiltCard from '../ui/TiltCard';
 
 const features = [
     {
-        icon: FaRocket,
+        icon: '/assets/images/Icons/Custom_Website.png',
         title: 'Tailored & Impactful Websites',
         description: 'Every business is unique — and so is every website we build. We craft custom solutions properly designed to reflect your brand and deliver real results.',
     },
     {
-        icon: FaLightbulb,
+        icon: '/assets/images/Icons/Creative_Meets_Technology.png',
         title: 'Creative Meets Technology',
         description: 'We blend stunning UI/UX with powerful functionality. The result? Websites that don\'t just look good but perform flawlessly.',
     },
     {
-        icon: FaHandshake,
+        icon: '/assets/images/Icons/Long_term_partnership.png',
         title: 'Long-Term Partnership',
         description: 'Our job doesn\'t end at launch. With reliable support and updates, we ensure your website stays secure, fast, and future-ready.',
     },

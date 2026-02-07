@@ -150,22 +150,24 @@ const AboutUs = () => {
                         className="grid grid-cols-1 md:grid-cols-3 gap-8"
                     >
                         {[
-                            { icon: FaRocket, title: "Our Mission", desc: "To empower businesses with scalable, high-performance digital solutions that drive growth." },
-                            { icon: FaLightbulb, title: "Our Vision", desc: "To be the global standard for innovation in web development and user experience design." },
-                            { icon: FaHandshake, title: "Our Values", desc: "Integrity, Innovation, and Client-Centricity are at the heart of everything we do." }
+                            { icon: "/assets/images/Icons/Our_mission.png", title: "Our Mission", desc: "To empower businesses with scalable, high-performance digital solutions that drive growth." },
+                            { icon: "/assets/images/Icons/Our_vision.png", title: "Our Vision", desc: "To be the global standard for innovation in web development and user experience design." },
+                            { icon: "/assets/images/Icons/Our_Value.png", title: "Our Values", desc: "Integrity, Innovation, and Client-Centricity are at the heart of everything we do." }
                         ].map((item, index) => (
                             <motion.div key={index} variants={itemVariants}>
                                 <TiltCard>
-                                    <motion.div
-                                        whileHover={{ y: -5 }}
-                                        className="bg-blue-200 p-8 rounded-xl shadow-sm text-left h-full flex flex-col"
-                                    >
-                                        <div className="mb-4 text-blue-600 text-2xl bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-sm">
-                                            <item.icon className="text-sm" />
+                                    <div className="group relative p-8 rounded-2xl overflow-hidden h-full flex flex-col transition-[transform,shadow] duration-500 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)]">
+                                        <div className="absolute inset-0 bg-white border border-gray-100 rounded-2xl group-hover:border-primary/20 transition-colors duration-500 -z-10 rounded-2xl"></div>
+
+                                        <div className="relative h-full flex flex-col isolate-fix antialiased">
+                                            <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform duration-500 group-hover:scale-110"></div>
+                                            <div className="mb-6 w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                                <img src={item.icon} alt={item.title} className="w-8 h-8 object-contain" />
+                                            </div>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
-                                        <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
-                                    </motion.div>
+                                    </div>
                                 </TiltCard>
                             </motion.div>
                         ))}
@@ -236,19 +238,35 @@ const AboutUs = () => {
                         {teamMembers.map((member, index) => (
                             <motion.div key={index} variants={itemVariants}>
                                 <TiltCard>
-                                    <div className="bg-blue-200 p-6 rounded-xl text-center hover:shadow-xl transition-all duration-300 h-full">
-                                        <div className="w-24 h-24 mx-auto bg-gray-300 rounded-full mb-4 border-4 border-white shadow-sm overflow-hidden">
-                                            {member.image ? (
-                                                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                                            ) : (
-                                                <div className="w-full h-full flex items-center justify-center text-gray-500">
-                                                    <FaUserTie className="text-3xl" />
+                                    <div className="relative p-8 rounded-2xl overflow-hidden text-center h-full flex flex-col group transition-[transform,shadow] duration-500 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.08)] antialiased">
+                                        <div className="absolute inset-0 bg-white border border-gray-100 rounded-2xl group-hover:border-primary/20 transition-colors duration-500 -z-10 rounded-2xl"></div>
+
+                                        <div className="relative h-full flex flex-col items-center isolate-fix rounded-2xl overflow-hidden">
+                                            {/* Subtle corner accent */}
+                                            <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+
+                                            <div className="relative w-32 h-32 mx-auto mb-6">
+                                                {/* Profile Decorative Ring */}
+                                                <div className="absolute inset-0 rounded-full border-2 border-primary/10 group-hover:border-primary/30 transition-colors duration-500"></div>
+                                                <div className="w-full h-full rounded-full bg-gray-50 p-1.5 transition-transform duration-500 group-hover:scale-105">
+                                                    <div className="w-full h-full rounded-full overflow-hidden border-2 border-white shadow-sm bg-gray-100">
+                                                        {member.image ? (
+                                                            <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                                                        ) : (
+                                                            <div className="w-full h-full flex items-center justify-center text-gray-400">
+                                                                <FaUserTie className="text-4xl" />
+                                                            </div>
+                                                        )}
+                                                    </div>
                                                 </div>
-                                            )}
+                                            </div>
+
+                                            <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
+                                            <div className="inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-[10px] uppercase tracking-wider font-bold mb-4 mx-auto border border-primary/10">
+                                                {member.role}
+                                            </div>
+                                            <p className="text-gray-500 text-xs leading-relaxed mb-auto opacity-80">{member.desc}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-                                        <p className="text-gray-700 text-xs font-semibold mb-3">{member.role}</p>
-                                        <p className="text-gray-600 text-xs leading-relaxed opacity-80">{member.desc}</p>
                                     </div>
                                 </TiltCard>
                             </motion.div>

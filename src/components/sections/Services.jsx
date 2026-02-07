@@ -6,22 +6,22 @@ import TiltCard from '../ui/TiltCard';
 
 const servicesData = [
     {
-        icon: FaCode,
+        icon: '/assets/images/Icons/Web_apps.png',
         title: 'Custom Website Development',
-        description: 'We build seamless, high-performance websites tailored to your business needs, from portfolios to complex web applications. Built with modern tech.',
+        description: 'We build seamless, high-performance websites tailored to your business needs, from portfolios to complex web applications.',
     },
     {
-        icon: FaPaintBrush,
+        icon: '/assets/images/Icons/UI-UX-design.png',
         title: 'UI/UX Design',
-        description: 'Engaging, user-friendly designs that combine functionality with aesthetics. We ensure every website is visually stunning and easy to navigate.',
+        description: 'Engaging, user-friendly designs that combine functionality with aesthetics. We ensure every website is visually stunning.',
     },
     {
-        icon: FaShoppingCart,
-        title: 'E-Commerce Solutions',
-        description: 'Boost your online sales with secure, feature-rich e-commerce platforms. We develop custom stores with seamless checkout and payment integration.',
+        icon: '/assets/images/Icons/iot-solution.png',
+        title: 'IoT Solutions',
+        description: 'Build smart, connected systems with edge computing and real-time data monitoring.',
     },
     {
-        icon: FaTools,
+        icon: '/assets/images/Icons/Website_Maintenace_Support.png',
         title: 'Website Maintenance & Support',
         description: 'Stay worry-free with our ongoing support. We handle updates, security, and performance monitoring to keep your website running smoothly.',
     },
