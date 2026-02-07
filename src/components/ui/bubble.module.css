@@ -1,0 +1,24 @@
+.hoverText {
+    transition: 0.35s font-weight, 0.35s color;
+    cursor: pointer;
+}
+
+.hoverText:hover {
+    font-weight: 900;
+    color: var(--primary, #9333ea);
+}
+
+/* Secondary bubble effect for neighboring characters */
+.hoverText:hover+.hoverText {
+    font-weight: 500;
+    color: var(--primary, #9333ea);
+    opacity: 0.8;
+}
+
+/* Note: :has() is supported in modern browsers. 
+   If not supported, only the forward neighbor will bubble. */
+.hoverText:has(+ .hoverText:hover) {
+    font-weight: 500;
+    color: var(--primary, #9333ea);
+    opacity: 0.8;
+}
