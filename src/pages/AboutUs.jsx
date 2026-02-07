@@ -49,13 +49,19 @@ const AboutUs = () => {
         <div className="bg-white font-sans text-gray-800">
             {/* Hero Section */}
             <section className="pt-32 pb-16 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-12">
-                <div className="w-full md:w-1/2">
+                <motion.div
+                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="w-full md:w-1/2"
+                >
                     <TiltCard>
                         <div className="w-full h-auto flex items-center justify-center">
                             <img src="/assets/images/About_Us_Hero_New.png" alt="About Us Hero" className="max-w-full h-auto object-contain" />
                         </div>
                     </TiltCard>
-                </div>
+                </motion.div>
                 <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                         <SplitText
@@ -100,11 +106,17 @@ const AboutUs = () => {
                             </p>
                         </ScrollReveal>
                     </div>
-                    <div className="w-full md:w-1/2">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-full md:w-1/2"
+                    >
                         <TiltCard>
                             <img src="/assets/images/Who_we_are_new.png" alt="Who We Are" className="w-full h-auto max-w-md mx-auto object-contain" />
                         </TiltCard>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -153,13 +165,19 @@ const AboutUs = () => {
             {/* Why Choose Us section (inline) */}
             <div className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-12">
-                    <div className="w-full md:w-1/2">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-full md:w-1/2"
+                    >
                         <TiltCard>
                             <div className="w-full h-auto flex items-center justify-center">
                                 <img src="/assets/images/Why Choose US.svg" alt="Why Choose Us" className="max-w-full h-auto object-contain" />
                             </div>
                         </TiltCard>
-                    </div>
+                    </motion.div>
                     <div className="w-full md:w-1/2 space-y-6">
                         <h2 className="text-3xl font-bold text-gray-900 leading-tight">
                             <SplitText text="Why Choose Us" className="inline" /> <span className="text-primary text-2xl">?</span>

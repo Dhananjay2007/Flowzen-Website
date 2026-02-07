@@ -109,11 +109,17 @@ const ServicesPage = () => {
                         <LearnMoreButton />
                     </motion.div>
                 </div>
-                <div className="w-full md:w-1/2">
+                <motion.div
+                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="w-full md:w-1/2"
+                >
                     <TiltCard>
                         <img src="/assets/images/Our_Services.png" alt="Our Services" className="w-full h-auto max-w-lg mx-auto object-contain" />
                     </TiltCard>
-                </div>
+                </motion.div>
             </section>
 
             {/* Expertise Section */}
@@ -213,10 +219,10 @@ const ServicesPage = () => {
 
                             {/* Image Side */}
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}
+                                transition={{ duration: 0.6, ease: "easeOut" }}
                                 className="w-full md:w-1/2"
                             >
                                 <TiltCard>

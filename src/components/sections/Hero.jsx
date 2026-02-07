@@ -64,9 +64,9 @@ const Hero = () => {
                 {/* Hero Image */}
                 <div className="w-full md:w-1/2 flex justify-center md:justify-end">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
                         className="relative w-full max-w-lg"
                     >
                         <TiltCard>
