@@ -6,6 +6,7 @@ const Logo = ({ className, src = "/assets/images/logo/Flowzen_Logo_Final.png", .
             src={src}
             alt="Flowzen Logo"
             className={className}
+            decoding="async"
             {...props}
         />
     );

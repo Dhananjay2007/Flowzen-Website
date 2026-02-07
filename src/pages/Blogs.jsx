@@ -162,6 +162,8 @@ const Blogs = () => {
                                                 src={post.image}
                                                 alt={post.title}
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                             <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-primary">
                                                 {post.category}

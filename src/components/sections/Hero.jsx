@@ -72,9 +72,10 @@ const Hero = () => {
                         <TiltCard>
                             {/* Main Illustration */}
                             <img
-                                src="/assets/images/Hero.png"
+                                src="/assets/images/Webp/Hero.webp"
                                 alt="Digital Experiences Illustration"
                                 className="w-full h-auto object-contain drop-shadow-xl"
+                                decoding="async"
                             />
                         </TiltCard>
 

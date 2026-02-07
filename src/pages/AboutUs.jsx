@@ -58,7 +58,12 @@ const AboutUs = () => {
                 >
                     <TiltCard>
                         <div className="w-full h-auto flex items-center justify-center">
-                            <img src="/assets/images/About_Us_Hero_New.png" alt="About Us Hero" className="max-w-full h-auto object-contain" />
+                            <img
+                                src="/assets/images/Webp/About_Us_Hero_New.webp"
+                                alt="About Us Hero"
+                                className="max-w-full h-auto object-contain"
+                                decoding="async"
+                            />
                         </div>
                     </TiltCard>
                 </motion.div>
@@ -114,7 +119,13 @@ const AboutUs = () => {
                         className="w-full md:w-1/2"
                     >
                         <TiltCard>
-                            <img src="/assets/images/Who_we_are_new.png" alt="Who We Are" className="w-full h-auto max-w-md mx-auto object-contain" />
+                            <img
+                                src="/assets/images/Webp/Who_we_are_new.webp"
+                                alt="Who We Are"
+                                className="w-full h-auto max-w-md mx-auto object-contain"
+                                loading="lazy"
+                                decoding="async"
+                            />
                         </TiltCard>
                     </motion.div>
                 </div>
@@ -174,7 +185,13 @@ const AboutUs = () => {
                     >
                         <TiltCard>
                             <div className="w-full h-auto flex items-center justify-center">
-                                <img src="/assets/images/Why Choose US.svg" alt="Why Choose Us" className="max-w-full h-auto object-contain" />
+                                <img
+                                    src="/assets/images/Webp/Why Choose US.webp"
+                                    alt="Why Choose Us"
+                                    className="max-w-full h-auto object-contain"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                             </div>
                         </TiltCard>
                     </motion.div>

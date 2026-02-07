@@ -46,7 +46,7 @@ const ServicesPage = () => {
                 "E-commerce Solutions", "Performance Optimization"
             ],
             technologies: ["React.js", "Tailwind CSS", "Next.js", "HTML/CSS/JS"],
-            image: "/assets/images/Our_Services.png",
+            image: "/assets/images/Webp/Our_Services.webp",
             reverse: false
         },
         {
@@ -58,7 +58,7 @@ const ServicesPage = () => {
                 "Visual Design & Branding", "Mobile App Design"
             ],
             technologies: ["Figma", "Adobe XD/Sketch"],
-            image: "/assets/images/UI_UX_Design_New.png",
+            image: "/assets/images/Webp/UI_UX_Design_New.webp",
             reverse: true
         },
         {
@@ -69,7 +69,7 @@ const ServicesPage = () => {
                 "SSL Certificates", "Performance Monitoring",
                 "Regular Updates", "Bug Fixes & Patches"
             ],
-            image: "/assets/images/Security and maintanance.svg",
+            image: "/assets/images/Webp/Security and maintanance.webp",
             reverse: false
         },
         {
@@ -80,7 +80,7 @@ const ServicesPage = () => {
                 "Cloud Connectivity", "Sensor Networks",
                 "Automation Systems", "Remote Monitoring"
             ],
-            image: "/assets/images/IoT_Projects.svg",
+            image: "/assets/images/Webp/IoT_Projects.webp",
             reverse: true
         }
     ];
@@ -117,7 +117,12 @@ const ServicesPage = () => {
                     className="w-full md:w-1/2"
                 >
                     <TiltCard>
-                        <img src="/assets/images/Our_Services.png" alt="Our Services" className="w-full h-auto max-w-lg mx-auto object-contain" />
+                        <img
+                            src="/assets/images/Webp/Our_Services.webp"
+                            alt="Our Services"
+                            className="w-full h-auto max-w-lg mx-auto object-contain"
+                            decoding="async"
+                        />
                     </TiltCard>
                 </motion.div>
             </section>
@@ -234,6 +239,8 @@ const ServicesPage = () => {
                                             src={section.image}
                                             alt={section.title}
                                             className="relative z-10 max-w-full max-h-full object-contain"
+                                            loading="lazy"
+                                            decoding="async"
                                             onError={(e) => {
                                                 e.target.style.display = 'none'; // Hide broken image
                                                 e.target.parentElement.innerHTML += `<span class='text-lg'>${section.title} Illustration</span>`;
