@@ -8,11 +8,11 @@ const stages = [
         id: 0,
         image: '/assets/images/New/WEBP/Why_Choose_US.webp',
         title: 'Why Flowzen',
-        description: "We don't just build websites, we build trust, growth, and long-term impact.",
+        description: "We don’t just build websites — we design and develop high-performance web platforms and practical IoT solutions that help businesses grow with confidence. By focusing on reliability, scalability, and long-term value, we build trust through solutions that continue to perform well beyond launch.",
     },
     {
         id: 1,
-        image: '/assets/images/New/WEBP/Who_We_Are.webp',
+        image: '/assets/images/New/WEBP/Our_Promises.webp',
         title: 'Our Promises',
         points: [
             { label: 'Quality', text: 'High-performance, detail-oriented solutions.' },
@@ -23,7 +23,7 @@ const stages = [
     },
     {
         id: 2,
-        image: '/assets/images/New/WEBP/Our_Services.webp',
+        image: '/assets/images/New/WEBP/Why_we_Better.webp',
         title: 'Why We Are Better',
         points: [
             { label: 'Expert Team', text: 'Skilled professionals with deep technical expertise.' },

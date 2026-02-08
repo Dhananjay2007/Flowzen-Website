@@ -42,17 +42,17 @@ const About = () => {
                         <div className="space-y-4 text-gray-600 mb-8">
                             <ScrollReveal isVisible={titleFinished}>
                                 <p>
-                                    At Flowzen Technologies, we craft websites that go beyond design and code. We blend creativity, technology, and strategy to built digital experiences that truly connect with people.
+                                    At Flowzen Technologies, we design and build high-performance websites and practical IoT solutions that are fast, reliable, and built to last.
                                 </p>
                             </ScrollReveal>
                             <ScrollReveal delay={0.2} isVisible={titleFinished}>
                                 <p>
-                                    We started with a simple vision: make websites smarter, faster, and more impactful for businesses of all sizes. Today we're helping startups, small businesses, and growing brands turn ideas into engaging platforms.
+                                    We work with startups and growing businesses to turn ideas into scalable digital platforms and connected solutions that deliver real value.
                                 </p>
                             </ScrollReveal>
                             <ScrollReveal delay={0.4} isVisible={titleFinished}>
                                 <p>
-                                    For us, it's not just about building websites — it's about building partnerships. We listen, we understand, and we deliver solutions that match your goals.
+                                    Every project follows a clear, structured process focused on performance, scalability, and long-term maintainability.
                                 </p>
                             </ScrollReveal>
                         </div>

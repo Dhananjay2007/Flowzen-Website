@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaRocket, FaLightbulb, FaHandshake } from 'react-icons/fa';
 import Card from '../ui/Card';
 import TiltCard from '../ui/TiltCard';
 import SplitText from '../ui/SplitText';

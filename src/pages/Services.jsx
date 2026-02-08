@@ -98,7 +98,7 @@ const ServicesPage = () => {
                     </h1>
                     <ScrollReveal isVisible={heroFinished}>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            At Flowzen Technologies, we deliver modern web solutions that blend creativity, performance, and reliability. Here’s how we can help your business grow online:
+                            At Flowzen Technologies, we design and build high-performance websites and IoT solutions that combine thoughtful design, solid engineering, and real-world reliability. Here’s how we help businesses grow online and beyond
                         </p>
                     </ScrollReveal>
                     <motion.div
