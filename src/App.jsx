@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ServicesPage from './pages/Services';
 import Blogs from './pages/Blogs';
+import WhatsAppButton from './components/ui/WhatsAppButton';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -71,6 +72,7 @@ function App() {
         </main>
         <Footer />
       </Layout>
+      <WhatsAppButton />
     </Router>
   );
 }
