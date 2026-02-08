@@ -84,13 +84,13 @@ const AboutUs = () => {
                         animate={heroFinished ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                         transition={{ delay: 0.2 }}
                     >
-                        <LearnMoreButton />
+                        <LearnMoreButton onClick={() => document.getElementById('who-we-are').scrollIntoView({ behavior: 'smooth' })} />
                     </motion.div>
                 </div>
             </section>
 
             {/* Who We Are */}
-            <section className="py-24 bg-gray-50">
+            <section id="who-we-are" className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-16">
                     <div className="w-full md:w-1/2 space-y-6">
                         <h2 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
