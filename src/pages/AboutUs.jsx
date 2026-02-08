@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
+import WhyChooseUsAbout from '../components/sections/WhyChooseUsAbout';
 import LearnMoreButton from '../components/ui/LearnMoreButton';
 import CallUsButton from '../components/ui/CallUsButton';
 import SplitText from '../components/ui/SplitText';
@@ -33,11 +34,6 @@ const itemVariants = {
 };
 
 const AboutUs = () => {
-    const [heroFinished, setHeroFinished] = React.useState(false);
-    const [whoWeAreFinished, setWhoWeAreFinished] = React.useState(false);
-    const [foundationFinished, setFoundationFinished] = React.useState(false);
-    const [teamFinished, setTeamFinished] = React.useState(false);
-
     const teamMembers = [
         { name: 'Dhananjay R S', role: 'Founder & CEO', desc: 'Driving vision, strategy, and growth for Flowzen.' },
         { name: 'Raghul M', role: 'Lead Developer', desc: 'Turning complex ideas into seamless code.' },
@@ -71,41 +67,40 @@ const AboutUs = () => {
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                         <SplitText
                             text="About Us – Flowzen Technologies"
-                            onAnimationComplete={() => setHeroFinished(true)}
                         />
                     </h1>
-                    <ScrollReveal isVisible={heroFinished}>
+                    <ScrollReveal>
                         <p className="text-lg text-gray-500">
                             Your trusted partner in building a strong digital presence.
                         </p>
                     </ScrollReveal>
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
-                        animate={heroFinished ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        <LearnMoreButton onClick={() => document.getElementById('who-we-are').scrollIntoView({ behavior: 'smooth' })} />
+                        <LearnMoreButton />
                     </motion.div>
                 </div>
             </section>
 
             {/* Who We Are */}
-            <section id="who-we-are" className="py-24 bg-gray-50">
+            <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-16">
                     <div className="w-full md:w-1/2 space-y-6">
                         <h2 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
                             <span className="text-primary text-2xl"><FaUserTie /></span>
                             <SplitText
                                 text="Who We Are"
-                                onAnimationComplete={() => setWhoWeAreFinished(true)}
                             />
                         </h2>
-                        <ScrollReveal isVisible={whoWeAreFinished}>
+                        <ScrollReveal>
                             <p className="text-gray-600 leading-relaxed">
                                 At Flowzen Technologies, we believe every business deserves a strong digital presence. We're a passionate team of developers and designers dedicated to building websites that are not only visually stunning but also powerful, scalable, and future-ready.
                             </p>
                         </ScrollReveal>
-                        <ScrollReveal isVisible={whoWeAreFinished} delay={0.2}>
+                        <ScrollReveal delay={0.2}>
                             <p className="text-gray-600 leading-relaxed">
                                 What started as a vision to make website development simpler, smarter, and more impactful has grown into a mission of helping startups, small businesses, and enterprises build their digital identity with confidence.
                             </p>
@@ -136,17 +131,15 @@ const AboutUs = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold text-gray-900">
-                            <SplitText
-                                text="Our Foundation: Mission, Vision & Values"
-                                onAnimationComplete={() => setFoundationFinished(true)}
-                            />
+                            <SplitText text="Our Foundation: Mission, Vision & Values" />
                         </h2>
                     </div>
 
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
-                        animate={foundationFinished ? "visible" : "hidden"}
+                        whileInView="visible"
+                        viewport={{ once: true }}
                         className="grid grid-cols-1 md:grid-cols-3 gap-8"
                     >
                         {[
@@ -175,44 +168,11 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* Why Choose Us section (inline) */}
-            <div className="py-24 bg-gray-50">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full md:w-1/2"
-                    >
-                        <TiltCard>
-                            <div className="w-full h-auto flex items-center justify-center">
-                                <img
-                                    src="/assets/images/New/WEBP/Why_Choose_US.webp"
-                                    alt="Why Choose Us"
-                                    className="max-w-full h-auto object-contain"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                            </div>
-                        </TiltCard>
-                    </motion.div>
-                    <div className="w-full md:w-1/2 space-y-6">
-                        <h2 className="text-3xl font-bold text-gray-900 leading-tight">
-                            <SplitText text="Why Choose Us" className="inline" /> <span className="text-primary text-2xl">?</span>
-                        </h2>
-                        <ScrollReveal>
-                            <p className="text-gray-600 italic font-medium">
-                                Because at Flowzen, you're not just getting a website you're gaining a digital partner. We listen, understand, and deliver solutions that help your brand stand out and grow in today's competitive world.
-                            </p>
-                        </ScrollReveal>
-                        <LearnMoreButton />
-                    </div>
-                </div>
-            </div>
+            {/* Why Choose Us section */}
+            <WhyChooseUsAbout />
 
             {/* Team Section */}
-            <section id="team" className="py-24 bg-white">
+            <section id="team" className="py-24 bg-white relative z-20">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                     <div className="text-center mb-16">
                         <div className="inline-block p-3 rounded-full bg-blue-50 mb-4 animate-bounce">
@@ -221,10 +181,9 @@ const AboutUs = () => {
                         <h2 className="text-3xl font-bold text-gray-900">
                             <SplitText
                                 text="Our Team"
-                                onAnimationComplete={() => setTeamFinished(true)}
                             />
                         </h2>
-                        <ScrollReveal isVisible={teamFinished}>
+                        <ScrollReveal>
                             <p className="text-gray-500 mt-2">Our team combines creativity, technology, and strategy to turn ideas into powerful digital solutions.</p>
                         </ScrollReveal>
                     </div>
@@ -232,7 +191,8 @@ const AboutUs = () => {
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
-                        animate={teamFinished ? "visible" : "hidden"}
+                        whileInView="visible"
+                        viewport={{ once: true }}
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
                     >
                         {teamMembers.map((member, index) => (
@@ -276,7 +236,7 @@ const AboutUs = () => {
             </section>
 
             {/* Updated Footer CTA */}
-            <div className="py-12 bg-gray-50 text-center border-t border-gray-200">
+            <div className="py-12 bg-gray-50 text-center border-t border-gray-200 relative z-20">
                 <div className="container mx-auto px-4">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
                         <SplitText text="Have any Questions" />

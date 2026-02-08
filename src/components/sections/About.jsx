@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import LearnMoreButton from '../ui/LearnMoreButton';
@@ -8,7 +7,6 @@ import TiltCard from '../ui/TiltCard';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const About = () => {
-    const navigate = useNavigate();
     const [titleFinished, setTitleFinished] = React.useState(false);
 
     return (
@@ -64,7 +62,7 @@ const About = () => {
                             animate={titleFinished ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <LearnMoreButton onClick={() => navigate('/about')} />
+                            <LearnMoreButton />
                         </motion.div>
                     </motion.div>
 

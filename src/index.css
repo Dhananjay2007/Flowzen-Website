@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+
+  html,
+  body {
+    overflow-x: clip;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
-    /* Better for avoiding blurs during transforms */
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */

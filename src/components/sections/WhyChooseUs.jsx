@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaRocket, FaLightbulb, FaHandshake } from 'react-icons/fa';
 import Card from '../ui/Card';
 import TiltCard from '../ui/TiltCard';
+import SplitText from '../ui/SplitText';
 
 const features = [
     {
@@ -21,8 +22,6 @@ const features = [
         description: 'Our job doesn\'t end at launch. With reliable support and updates, we ensure your website stays secure, fast, and future-ready.',
     },
 ];
-
-import SplitText from '../ui/SplitText';
 
 const containerVariants = {
     hidden: { opacity: 0 },
