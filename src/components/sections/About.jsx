@@ -80,14 +80,14 @@ const About = () => {
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white rounded-full shadow-2xl -z-10 opacity-60 filter blur-2xl" />
 
                                 <img
-                                    src="/assets/images/Webp/about Flowzen Technologies.webp"
+                                    src="/assets/images/New/WEBP/About_Flowzen.webp"
                                     alt="Flowzen Team"
                                     className="w-full h-auto object-contain relative z-10"
                                     loading="lazy"
                                     decoding="async"
                                     onError={(e) => {
                                         e.target.onerror = null;
-                                        e.target.src = "/assets/images/Webp/Who_we_are_new.webp"; // Fallback to another webp
+                                        e.target.src = "/assets/images/New/WEBP/Who_We_Are.webp"; // Fallback to another webp
                                     }}
                                 />
                             </div>

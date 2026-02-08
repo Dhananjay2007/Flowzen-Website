@@ -46,7 +46,7 @@ const ServicesPage = () => {
                 "E-commerce Solutions", "Performance Optimization"
             ],
             technologies: ["React.js", "Tailwind CSS", "Next.js", "HTML/CSS/JS"],
-            image: "/assets/images/Webp/Our_Services.webp",
+            image: "assets/images/New/WEBP/Web_Development.webp",
             reverse: false
         },
         {
@@ -58,7 +58,7 @@ const ServicesPage = () => {
                 "Visual Design & Branding", "Mobile App Design"
             ],
             technologies: ["Figma", "Adobe XD/Sketch"],
-            image: "/assets/images/Webp/UI_UX_Design_New.webp",
+            image: "/assets/images/New/WEBP/UI_UX_design.webp",
             reverse: true
         },
         {
@@ -69,7 +69,7 @@ const ServicesPage = () => {
                 "SSL Certificates", "Performance Monitoring",
                 "Regular Updates", "Bug Fixes & Patches"
             ],
-            image: "/assets/images/Webp/Security and maintanance.webp",
+            image: "/assets/images/New/WEBP/Security_Maintenance.webp",
             reverse: false
         },
         {
@@ -80,7 +80,7 @@ const ServicesPage = () => {
                 "Cloud Connectivity", "Sensor Networks",
                 "Automation Systems", "Remote Monitoring"
             ],
-            image: "/assets/images/Webp/IoT_Projects.webp",
+            image: "/assets/images/New/WEBP/IoT_Projects.webp",
             reverse: true
         }
     ];
@@ -118,7 +118,7 @@ const ServicesPage = () => {
                 >
                     <TiltCard>
                         <img
-                            src="/assets/images/Webp/Our_Services.webp"
+                            src="/assets/images/New/WEBP/Our_Services.webp"
                             alt="Our Services"
                             className="w-full h-auto max-w-lg mx-auto object-contain"
                             decoding="async"

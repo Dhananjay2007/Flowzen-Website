@@ -70,9 +70,9 @@ const Services = () => {
                         viewport={{ once: true }}
                         className="inline-block mb-4"
                     >
-                        <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <div className="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
                             {/* Icon placeholder or small logo */}
-                            <span className="text-2xl">🛠️</span>
+                            <img src="/assets/images/New/WEBP/icon/Maintance.webp" alt="Maintenance" className="w-16 h-16 object-contain" />
                         </div>
                     </motion.div>
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">

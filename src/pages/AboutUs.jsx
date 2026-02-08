@@ -59,7 +59,7 @@ const AboutUs = () => {
                     <TiltCard>
                         <div className="w-full h-auto flex items-center justify-center">
                             <img
-                                src="/assets/images/Webp/About_Us_Hero_New.webp"
+                                src="/assets/images/New/WEBP/About_us_page.webp"
                                 alt="About Us Hero"
                                 className="max-w-full h-auto object-contain"
                                 decoding="async"
@@ -120,7 +120,7 @@ const AboutUs = () => {
                     >
                         <TiltCard>
                             <img
-                                src="/assets/images/Webp/Who_we_are_new.webp"
+                                src="/assets/images/New/WEBP/Who_We_Are.webp"
                                 alt="Who We Are"
                                 className="w-full h-auto max-w-md mx-auto object-contain"
                                 loading="lazy"
@@ -188,7 +188,7 @@ const AboutUs = () => {
                         <TiltCard>
                             <div className="w-full h-auto flex items-center justify-center">
                                 <img
-                                    src="/assets/images/Webp/Why Choose US.webp"
+                                    src="/assets/images/New/WEBP/Why_Choose_US.webp"
                                     alt="Why Choose Us"
                                     className="max-w-full h-auto object-contain"
                                     loading="lazy"
