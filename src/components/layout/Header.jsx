@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import Button from '../ui/Button';
@@ -26,18 +26,11 @@ const Header = () => {
         { name: 'Blogs', href: '/blogs' },
     ];
 
+    const navigate = useNavigate();
+
     const handleContactClick = () => {
         setIsOpen(false);
-        // If on home page, scroll to contact
-        if (location.pathname === '/') {
-            const element = document.getElementById('contact');
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        } else {
-            // Navigate home then scroll (simple version)
-            window.location.href = '/#contact';
-        }
+        navigate('/contact');
     };
 
     return (

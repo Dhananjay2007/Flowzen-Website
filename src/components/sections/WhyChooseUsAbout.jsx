@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'framer-motion';
 import LearnMoreButton from '../ui/LearnMoreButton';
 import { FaArrowRight } from 'react-icons/fa';
 
@@ -83,6 +83,16 @@ const WhyChooseUsAbout = () => {
     const img3Y = useTransform(scrollYProgress, [0.55, 0.7, 1.0], [500, 0, 0]);
 
 
+    // Scroll indicator: track which stage is active
+    const [scrollStage, setScrollStage] = useState(0);
+    useMotionValueEvent(scrollYProgress, 'change', (v) => {
+        if (v < 0.45) setScrollStage(0);
+        else if (v < 0.78) setScrollStage(1);
+        else setScrollStage(2);
+    });
+
+    // Progress fill between dots (0→1 maps to top-dot → bottom-dot)
+    const dotsFillHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
     const handleNextStage = () => {
         setActiveStage((prev) => (prev + 1) % stages.length);
@@ -236,6 +246,38 @@ const WhyChooseUsAbout = () => {
                     </div>
                 </div>
 
+
+                {/* Scroll Indicator */}
+                <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-0 z-20 select-none">
+                    {/* Track line behind dots */}
+                    <div className="relative flex flex-col items-center" style={{ height: `${(stages.length - 1) * 56}px` }}>
+                        {/* Grey background track */}
+                        <div className="absolute left-1/2 top-3 -translate-x-1/2 w-[2px] bg-gray-200 rounded-full" style={{ height: `calc(100% - 24px)` }} />
+                        {/* Animated fill */}
+                        <motion.div
+                            className="absolute left-1/2 top-3 -translate-x-1/2 w-[2px] bg-violet-600 rounded-full origin-top"
+                            style={{ height: dotsFillHeight, maxHeight: `calc(100% - 24px)` }}
+                        />
+                        {/* Dots */}
+                        {stages.map((stage, idx) => (
+                            <div
+                                key={idx}
+                                className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
+                                style={{ top: `${idx * 56}px` }}
+                            >
+                                <motion.div
+                                    animate={{
+                                        scale: scrollStage === idx ? 1.5 : 1,
+                                        backgroundColor: scrollStage === idx ? '#7c3aed' : '#d1d5db',
+                                        boxShadow: scrollStage === idx ? '0 0 0 4px rgba(124,58,237,0.25)' : '0 0 0 0px rgba(124,58,237,0)'
+                                    }}
+                                    transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                                    className="w-3 h-3 rounded-full"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
             </div>
         </section>

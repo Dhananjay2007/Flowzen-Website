@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // contacts collection:
+    // - Anyone can CREATE, but only if payload matches expected shape
+    // - Only authenticated users (admin) can READ, UPDATE, DELETE
+    match /contacts/{docId} {
+      allow create: if
+        request.resource.data.keys().hasAll(['email', 'firstName', 'orderNumber', 'status', 'createdAt']) &&
+        request.resource.data.email is string &&
+        request.resource.data.email.size() > 5 &&
+        request.resource.data.status == 'Pending';
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Block everything else by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
