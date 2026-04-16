@@ -8,6 +8,7 @@ import CallUsButton from '../components/ui/CallUsButton';
 import TiltCard from '../components/ui/TiltCard';
 import SplitText from '../components/ui/SplitText';
 import ScrollReveal from '../components/ui/ScrollReveal';
+import SEO from '../components/ui/SEO';
 import { FaCheckCircle } from 'react-icons/fa';
 
 const containerVariants = {
@@ -89,6 +90,11 @@ const ServicesPage = () => {
 
     return (
         <div className="bg-white font-sans text-gray-800">
+            <SEO 
+                title="Premium Services" 
+                descriptionHover="From scalable web platforms to native iOS architectures, discover our massive toolkit designed to disrupt industries."
+                keywords="Software Services, Custom Web Applications, React Apps, Flutter Apps India"
+            />
             {/* Hero Section */}
             <section className="pt-32 pb-16 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-12">
                 <div className="w-full md:w-1/2 space-y-6">

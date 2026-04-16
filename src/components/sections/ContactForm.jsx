@@ -314,7 +314,9 @@ const ContactForm = () => {
                                 </li>
                                 <li>
                                     <a
-                                        href="mailto:infoinvaderssih@gmail.com"
+                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=infoinvaderssih@gmail.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="flex items-center gap-2.5 text-sm font-semibold text-gray-800 hover:text-violet-600 transition-colors group"
                                     >
                                         <span className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center group-hover:bg-violet-200 transition-colors">

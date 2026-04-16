@@ -9,6 +9,7 @@ import ServicesPage from './pages/Services';
 import Blogs from './pages/Blogs';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
+import ProjectEstimator from './pages/ProjectEstimator';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 
 // Scroll to top on route change
@@ -20,7 +21,7 @@ const ScrollToTop = () => {
 
 function AppInner() {
   const { pathname } = useLocation();
-  const isAdmin = pathname === '/admin' || pathname === '/admin/';
+  const isAdmin = pathname === '/fz-portal' || pathname === '/fz-portal/';
 
   // Admin page gets its own isolated full-screen layout
   if (isAdmin) {
@@ -38,6 +39,7 @@ function AppInner() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/estimate" element={<ProjectEstimator />} />
         </Routes>
       </main>
       <Footer />

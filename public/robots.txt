@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /fz-portal
+Disallow: /admin
+
+# Sitemap directive when available
+# Sitemap: https://flowzentechnologies.com/sitemap.xml

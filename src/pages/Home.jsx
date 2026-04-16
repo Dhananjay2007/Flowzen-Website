@@ -4,10 +4,16 @@ import Services from '../components/sections/Services';
 import About from '../components/sections/About';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import FAQ from '../components/sections/FAQ';
+import SEO from '../components/ui/SEO';
 
 const Home = () => {
     return (
         <>
+            <SEO 
+                title="Premium Digital Agency" 
+                descriptionHover="Flowzen Technologies is a high-end digital agency specializing in custom web applications, SaaS platforms, and mobile apps."
+                keywords="Flowzen Technologies, Digital Agency, Web Development India, React Developers, SaaS Builders, App Development"
+            />
             <Hero />
             <Services />
             <About />

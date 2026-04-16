@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SEO from '../components/ui/SEO';
 import { FaCalendar, FaClock, FaArrowRight, FaSearch } from 'react-icons/fa';
 import Button from '../components/ui/Button';
 import ReadMoreButton from '../components/ui/ReadMoreButton';
@@ -110,6 +111,11 @@ const Blogs = () => {
 
     return (
         <div className="bg-white font-sans text-gray-800">
+            <SEO 
+                title="Insights & Blog" 
+                descriptionHover="Read the latest engineering insights, web development tutorials, and SaaS industry trends from the Flowzen Technologies team."
+                keywords="Tech Blog, Software Engineering, Vite tutorials, React performance, Flowzen"
+            />
             {/* Hero Section */}
             <section className="pt-32 pb-16 bg-gradient-to-br from-purple-50 to-violet-50 relative overflow-hidden">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center relative z-10">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEO from '../components/ui/SEO';
 import Button from '../components/ui/Button';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import WhyChooseUsAbout from '../components/sections/WhyChooseUsAbout';
@@ -45,6 +46,11 @@ const AboutUs = () => {
 
     return (
         <div className="bg-white font-sans text-gray-800">
+            <SEO 
+                title="About Us" 
+                descriptionHover="Learn about the elite engineering team at Flowzen Technologies. Meet our founders and discover our mission to build cutting-edge digital experiences."
+                keywords="About Flowzen, Dhananjay R S Flowzen, Flowzen Team, Best Web Agency India"
+            />
             {/* Hero Section */}
             <section className="pt-32 pb-16 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-12">
                 <motion.div
