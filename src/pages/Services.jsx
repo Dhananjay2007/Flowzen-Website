@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import NeumorphismButton from '../components/ui/NeumorphismButton';
@@ -33,6 +34,7 @@ const itemVariants = {
 };
 
 const ServicesPage = () => {
+    const navigate = useNavigate();
     const [heroFinished, setHeroFinished] = React.useState(false);
     const [expertiseFinished, setExpertiseFinished] = React.useState(false);
 
@@ -106,7 +108,7 @@ const ServicesPage = () => {
                         animate={heroFinished ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                         transition={{ delay: 0.2 }}
                     >
-                        <LearnMoreButton />
+                        <LearnMoreButton onClick={() => document.getElementById('services-list')?.scrollIntoView({ behavior: 'smooth' })} />
                     </motion.div>
                 </div>
                 <motion.div
@@ -181,7 +183,7 @@ const ServicesPage = () => {
             </section>
 
             {/* Service Sections */}
-            <div className="space-y-0 bg-gray-50/50">
+            <div id="services-list" className="space-y-0 bg-gray-50/50">
                 {sections.map((section, index) => (
                     <section key={index} className={`py-20 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                         <div className={`container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col items-center gap-16 ${section.reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
@@ -231,7 +233,7 @@ const ServicesPage = () => {
                                 )}
 
                                 <div className="pt-6">
-                                    <NeumorphismButton>Book Now</NeumorphismButton>
+                                    <NeumorphismButton onClick={() => window.scrollTo(0, 0) || navigate('/contact')}>Book Now</NeumorphismButton>
                                 </div>
                             </motion.div>
 
@@ -277,7 +279,7 @@ const ServicesPage = () => {
                         <p className="text-gray-500 mb-8">Let's build something amazing together.</p>
                     </ScrollReveal>
                     <div className="flex justify-center">
-                        <CallUsButton onClick={() => window.location.href = 'mailto:infoinvaderssih@gmail.com'} />
+                        <CallUsButton onClick={() => window.scrollTo(0, 0) || navigate('/contact')} />
                     </div>
                 </div>
             </div>

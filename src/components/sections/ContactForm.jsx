@@ -301,7 +301,7 @@ const ContactForm = () => {
                             <ul className="space-y-2.5">
                                 <li>
                                     <a
-                                        href="https://wa.me/919999999999"
+                                        href="https://wa.me/919345060349"
                                         target="_blank"
                                         rel="noreferrer"
                                         className="flex items-center gap-2.5 text-sm font-semibold text-gray-800 hover:text-violet-600 transition-colors group"
@@ -362,13 +362,13 @@ const ContactForm = () => {
                                 Call our team Mon–Sat from 9am to 6pm IST.
                             </p>
                             <a
-                                href="tel:+919999999999"
+                                href="tel:+919345060349"
                                 className="flex items-center gap-2.5 text-sm font-semibold text-gray-800 hover:text-violet-600 transition-colors group"
                             >
                                 <span className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center">
                                     <FaPhone className="text-violet-600 text-xs" />
                                 </span>
-                                +91 99999 99999
+                                +91 93450 60349
                             </a>
                         </motion.div>
 

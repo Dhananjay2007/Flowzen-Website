@@ -26,10 +26,8 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-6">Company</h3>
                         <ul className="space-y-3 text-gray-400 text-sm">
-                            <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
-                            <li><a href="#team" className="hover:text-primary transition-colors">Our Team</a></li>
-                            <li><a href="#careers" className="hover:text-primary transition-colors">Careers</a></li>
-                            <li><a href="#privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+                            <li><Link to="/about" onClick={() => window.scrollTo(0,0)} className="hover:text-primary transition-colors">About Us</Link></li>
+                            <li><Link to="/about" onClick={() => window.scrollTo(0,0)} className="hover:text-primary transition-colors">Our Team</Link></li>
                         </ul>
                     </div>
 
@@ -52,9 +50,9 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
                         <ul className="space-y-3 text-gray-400 text-sm">
-                            <li><a href="#contact" className="hover:text-primary transition-colors">Contact Us</a></li>
-                            <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-                            <li><a href="#faq" className="hover:text-primary transition-colors">FAQ</a></li>
+                            <li><Link to="/contact" onClick={() => window.scrollTo(0,0)} className="hover:text-primary transition-colors">Contact Us</Link></li>
+                            <li><Link to="/services" onClick={() => window.scrollTo(0,0)} className="hover:text-primary transition-colors">Services</Link></li>
+                            <li><Link to="/contact" onClick={() => window.scrollTo(0,0)} className="hover:text-primary transition-colors">FAQ</Link></li>
                         </ul>
                     </div>
                 </div>

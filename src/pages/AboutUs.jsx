@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
@@ -34,11 +35,12 @@ const itemVariants = {
 };
 
 const AboutUs = () => {
+    const navigate = useNavigate();
     const teamMembers = [
-        { name: 'Dhananjay R S', role: 'Founder & CEO', desc: 'Driving vision, strategy, and growth for Flowzen.' },
-        { name: 'Raghul M', role: 'Lead Developer', desc: 'Turning complex ideas into seamless code.' },
-        { name: 'Vishnu Bharathi S', role: 'UI/UX Designer', desc: 'Designs clean and user friendly interfaces.' },
-        { name: 'Jeevithiran PV', role: 'Associate Developer', desc: 'Assists in coding and feature development.' },
+        { name: 'Dhananjay R S', role: 'CEO & Founder', desc: 'Driving vision, strategy, and growth for Flowzen.', bio: 'Dhananjay is the visionary behind Flowzen Technologies. He focuses on defining long-term objectives, establishing strategic partnerships, and fostering a culture of continuous innovation.' },
+        { name: 'Raghul M', role: 'CTO & Co-Founder', desc: 'Turning complex ideas into seamless code.', bio: 'As the Chief Technology Officer, Raghul leads the engineering team. He architects scalable systems, ensures code quality, and integrates cutting-edge tech into our solutions.' },
+        { name: 'Vishnu Bharathi S', role: 'CFO & Co-Founder', desc: 'Designs clean and user friendly interfaces.', bio: 'As the Chief Financial Officer, Vishnu manages financial planning and operations while blending his acute analytical skills with his background in creating intuitive design systems.' },
+        { name: 'Jeevithiran PV', role: 'Associate Developer', desc: 'Assists in coding and feature development.', bio: 'Jeevithiran is a dedicated full-stack developer who brings creative concepts to life. He ensures our digital platforms are performant, pixel-perfect, and reliable.' },
     ];
 
     return (
@@ -80,13 +82,13 @@ const AboutUs = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        <LearnMoreButton />
+                        <LearnMoreButton onClick={() => document.getElementById('who-we-are')?.scrollIntoView({ behavior: 'smooth' })} />
                     </motion.div>
                 </div>
             </section>
 
             {/* Who We Are */}
-            <section className="py-24 bg-gray-50">
+            <section id="who-we-are" className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-16">
                     <div className="w-full md:w-1/2 space-y-6">
                         <h2 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
@@ -198,17 +200,17 @@ const AboutUs = () => {
                         {teamMembers.map((member, index) => (
                             <motion.div key={index} variants={itemVariants}>
                                 <TiltCard>
-                                    <div className="relative p-8 rounded-2xl overflow-hidden text-center h-full flex flex-col group transition-[transform,shadow] duration-500 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.08)] antialiased">
-                                        <div className="absolute inset-0 bg-white border border-gray-100 rounded-2xl group-hover:border-primary/20 transition-colors duration-500 -z-10 rounded-2xl"></div>
+                                    <div className="relative p-8 rounded-2xl overflow-hidden text-center h-full flex flex-col group transition-[transform,shadow] duration-500 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)] antialiased cursor-pointer bg-white">
+                                        <div className="absolute inset-0 bg-white border border-gray-100 rounded-2xl group-hover:border-primary/20 transition-colors duration-500 -z-10"></div>
 
                                         <div className="relative h-full flex flex-col items-center isolate-fix rounded-2xl overflow-hidden">
                                             {/* Subtle corner accent */}
                                             <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
 
-                                            <div className="relative w-32 h-32 mx-auto mb-6">
+                                            <div className="relative w-32 h-32 mx-auto mb-6 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-95">
                                                 {/* Profile Decorative Ring */}
                                                 <div className="absolute inset-0 rounded-full border-2 border-primary/10 group-hover:border-primary/30 transition-colors duration-500"></div>
-                                                <div className="w-full h-full rounded-full bg-gray-50 p-1.5 transition-transform duration-500 group-hover:scale-105">
+                                                <div className="w-full h-full rounded-full bg-gray-50 p-1.5 transition-transform duration-500">
                                                     <div className="w-full h-full rounded-full overflow-hidden border-2 border-white shadow-sm bg-gray-100">
                                                         {member.image ? (
                                                             <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
@@ -225,7 +227,12 @@ const AboutUs = () => {
                                             <div className="inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-[10px] uppercase tracking-wider font-bold mb-4 mx-auto border border-primary/10">
                                                 {member.role}
                                             </div>
-                                            <p className="text-gray-500 text-xs leading-relaxed mb-auto opacity-80">{member.desc}</p>
+                                            <p className="text-gray-500 text-xs leading-relaxed mb-auto opacity-80 group-hover:opacity-0 transition-opacity duration-300">{member.desc}</p>
+                                        </div>
+
+                                        {/* Hover Bio Dropdown */}
+                                        <div className="absolute left-0 right-0 bottom-0 top-[40%] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] bg-white transform-gpu p-6 border-t border-primary/10 shadow-[0_-15px_40px_rgba(0,0,0,0.05)] flex flex-col justify-center rounded-b-2xl z-10">
+                                            <p className="text-gray-800 text-[13px] sm:text-sm leading-relaxed font-medium antialiased text-balance">{member.bio}</p>
                                         </div>
                                     </div>
                                 </TiltCard>
@@ -245,7 +252,7 @@ const AboutUs = () => {
                         <p className="text-gray-500 mb-6 text-sm">Contact Us anytime</p>
                     </ScrollReveal>
                     <div className="flex justify-center">
-                        <CallUsButton onClick={() => window.location.href = 'mailto:infoinvaderssih@gmail.com'} />
+                        <CallUsButton onClick={() => window.scrollTo(0, 0) || navigate('/contact')} />
                     </div>
                 </div>
             </div>
