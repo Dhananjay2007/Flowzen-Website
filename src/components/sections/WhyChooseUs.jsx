@@ -52,15 +52,6 @@ const WhyChooseUs = () => {
         <section id="why-choose-us" className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <div className="flex flex-col items-center">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
-                        >
-                            <img src="/assets/images/New/WEBP/icon/Why_us_icon.webp" alt="Why us" className="w-full h-full object-contain p-3" />
-                        </motion.div>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             <SplitText
                                 text="Why Flowzen"
@@ -76,7 +67,6 @@ const WhyChooseUs = () => {
                             We don't just build websites, we build trust, growth, and long-term impact.
                         </motion.p>
                     </div>
-                </div>
 
                 <motion.div
                     variants={containerVariants}

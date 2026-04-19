@@ -23,33 +23,45 @@ export default function VantaBirds() {
             return;
         }
 
+        // Check if WebGL is supported before attempting to initialize
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        if (!gl) {
+            console.warn('VantaBirds: WebGL not supported on this device. Skipping animation.');
+            return;
+        }
+
         if (!vantaEffect) {
-            setVantaEffect(
-                BIRDS({
-                    el: vantaRef.current,
-                    THREE,
-                    mouseControls: true,
-                    touchControls: true,
-                    gyroControls: false,
-                    minHeight: 200,
-                    minWidth: 200,
-                    scale: 1,
-                    scaleMobile: 1,
+            try {
+                setVantaEffect(
+                    BIRDS({
+                        el: vantaRef.current,
+                        THREE,
+                        mouseControls: true,
+                        touchControls: true,
+                        gyroControls: false,
+                        minHeight: 200,
+                        minWidth: 200,
+                        scale: 1,
+                        scaleMobile: 1,
 
-                    backgroundColor: 0xffffff,
-                    color1: 0xbe91ff,
-                    color2: 0x6800ff,
-                    colorMode: "lerpGradient",
+                        backgroundColor: 0xffffff,
+                        color1: 0xbe91ff,
+                        color2: 0x6800ff,
+                        colorMode: "lerpGradient",
 
-                    birdSize: 0.8,
-                    wingSpan: 40,
-                    speedLimit: 7,
-                    separation: 20,
-                    alignment: 20,
-                    cohesion: 2,
-                    quantity: 4,
-                })
-            );
+                        birdSize: 0.8,
+                        wingSpan: 40,
+                        speedLimit: 7,
+                        separation: 20,
+                        alignment: 20,
+                        cohesion: 2,
+                        quantity: 4,
+                    })
+                );
+            } catch (err) {
+                console.warn('VantaBirds: Failed to initialize WebGL animation.', err);
+            }
         }
 
         return () => {

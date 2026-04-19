@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LearnMoreButton = ({ onClick, children = "Learn more", className = "" }) => {
-    return (
-        <StyledWrapper className={className}>
-            <button onClick={onClick}>
-                {children}
-            </button>
-        </StyledWrapper>
-    );
+  return (
+    <StyledWrapper className={className}>
+      <button onClick={onClick}>
+        {children}
+      </button>
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`
