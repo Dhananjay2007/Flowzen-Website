@@ -8,7 +8,7 @@ const SEO = ({
     type = 'website',
     image = '/assets/images/New/WEBP/Hero_section.webp' // Fallback rich preview image
 }) => {
-    const siteName = 'Flowzen Technologies';
+    const siteName = 'Flowzen-Technologies';
     const description = descriptionHover || "Building modern, user-friendly websites and powerful mobile applications to turn ideas into impactful digital experiences.";
     
     return (

@@ -10,7 +10,6 @@ const Home = () => {
     return (
         <>
             <SEO 
-                title="Premium Digital Agency" 
                 descriptionHover="Flowzen Technologies is a high-end digital agency specializing in custom web applications, SaaS platforms, and mobile apps."
                 keywords="Flowzen Technologies, Digital Agency, Web Development India, React Developers, SaaS Builders, App Development"
             />
