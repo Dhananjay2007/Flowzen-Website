@@ -49,12 +49,12 @@ const About = () => {
                             </ScrollReveal>
                             <ScrollReveal delay={0.2} isVisible={titleFinished}>
                                 <p>
-                                    We work with startups and growing businesses to turn ideas into scalable digital platforms and connected solutions that deliver real value.
+                                    We engineer scalable digital platforms, modern apps, and custom IoT projects for everyone—from ambitious small startups to global enterprise brands.
                                 </p>
                             </ScrollReveal>
                             <ScrollReveal delay={0.4} isVisible={titleFinished}>
                                 <p>
-                                    Every project follows a clear, structured process focused on performance, scalability, and long-term maintainability.
+                                    Alongside our dedicated engineering work for clients, we invest heavily in internal R&D to architect and launch our own proprietary software products.
                                 </p>
                             </ScrollReveal>
                         </div>
